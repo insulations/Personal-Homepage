@@ -26,9 +26,9 @@ layout: default
   <div class="row">
     <div class="col-md-4">
       {% if site.animate %}
-        <img src="{{ site.profile_image }}" class="img-thumbnail float-left profile-image animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
+        <img src="{{ site.profile_image | relative_url }}" class="img-thumbnail float-left profile-image animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
       {% else %}
-        <img src="{{ site.profile_image }}" class="img-thumbnail float-left profile-image" alt="...">
+        <img src="{{ site.profile_image | relative_url }}" class="img-thumbnail float-left profile-image" alt="...">
       {% endif %}
     </div>
     <!-- EDUCATION SECTION -->
@@ -95,7 +95,7 @@ layout: default
                 <p><i>{{section.description}}</i></p>
                   {% for projects in site.data.projects %}
                   <div class="media mt-2">
-                    <img src="{{ projects.image }}" class="mr-3 mb-2 img-thumbnail border-0 project-image" alt="...">
+                    <img src="{{ projects.image | relative_url }}" class="mr-3 mb-2 img-thumbnail border-0 project-image" alt="...">
                     <div class="media-body">
                       <h5 class="mt-0">{{ projects.name }}</h5>
                       {{ projects.description }}
