@@ -3,11 +3,11 @@
   Program: computer science and technology
   StartDate: 09.2023
   EndDate: Present
-  Icon: /assets/img/icons/3x/Seal_of_Nankai_University.png      # Make this icon small, think 30px/30px
+  Icon: /static/img/icons/3x/Seal_of_Nankai_University.png      # Make this icon small, think 30px/30px
 
 - School: Shandong University
   Degree: Bachelor degree
   Program: computer science and technology
   StartDate: 09.2019
   EndDate: 06.2023
-  Icon: /assets/img/icons/3x/Shandong_University_Emblem.png
+  Icon: /static/img/icons/3x/Shandong_University_Emblem.png

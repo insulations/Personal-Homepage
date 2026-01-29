@@ -13,14 +13,14 @@ email: zixuan.li_2001@outlook.com
 description: Zixuan Li's Home Page
 baseurl:                                       # the subpath of your site, e.g. /blog
 url: "https://dumbarton.netlify.app/"          # the base hostname & protocol for your site, e.g. http://example.com
-image: /assets/img/preview.png               # used to generate site link preview
+image: /static/img/preview.png               # used to generate site link preview
 image_alt: A minimalistic jekyll theme for academic    # image description
 
 # =======================================#
 # -----------SITE SETTINGS---------------#
 #========================================#: 
 author: Zixuan Li 
-profile_image: /assets/img/avatar/personal_pic.png #/assets/img/avatar/avatar.jpeg 
+profile_image: /static/img/avatar/personal_pic.png #/static/img/avatar/avatar.jpeg 
 occupation: 
 snippet:
 twitter: tbutler0x90
