@@ -3,14 +3,14 @@
   description: >
     Volunteer proofreader and technical reviewer for the Chinese edition of Real-Time Rendering, 4th Edition.
   date: true
-  image:  /assets/img/posts/RTR4.png
+  image:  "{{ site.baseurl }}/assets/img/posts/RTR4.png"
 
 - name: Brian Langrage Heart Voice
   id: project2
   description: >
     Founder of Brian Langrage Heart Voice, an interactive intelligent platform based on brain-computer interfaces, designed to support daily living and care needs for elderly individuals with disabilities and patients with paralysis.
   date: true
-  image:  /assets/img/posts/Brian&voice.png
+  image:  "{{ site.baseurl }}/assets/img/posts/Brian&voice.png"
 
 
 # - name: Project 2
