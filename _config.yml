@@ -19,7 +19,7 @@ image_alt: A minimalistic jekyll theme for academic    # image description
 # =======================================#
 # -----------SITE SETTINGS---------------#
 #========================================#: 
-author: John Doe 
+author: Zixuan Li 
 profile_image: /assets/img/avatar/personal_pic.png #/assets/img/avatar/avatar.jpeg 
 occupation: 
 snippet:
@@ -27,10 +27,9 @@ twitter: tbutler0x90
 github: tcbutler320
 linkedin: tyler-b-a700a1aa
 stackoverflow: '12935605'
-website: https://tbutler.org
+website: 
 codepen: 
 medium: 
-email: developer.tbutler@gmail.com
 keybase: tbutler320
 pgp: 
 ctftime: 
