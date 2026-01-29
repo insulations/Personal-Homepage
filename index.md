@@ -3,7 +3,15 @@ layout: home
 title: 
 date: 2020-11-20 
 ---
-### Hi, I'm Dumbarton 👋
-Dumbarton is a Jekyll Theme developed by [Tyler Butler](https://github.com/tcbutler320). The theme is designed for academics and features a simple home page with an about me section and an interactive highlights section to describe publications, coursework, courses taught, and projects. You can checkout the project on [Github](https://github.com/tcbutler320/Jekyll-Theme-Dumbarton), feel free to make contributions and feature requests and don't forget to give it a star.
+### Hi, I'm Zixuan Li 
+I am a third-year Ph.D. student at Nankai University, working with Prof. [Beibei Wang](https://wangningbei.github.io/).
 
-<a href="/contact.html" class="highlighted">Contact Me</a>
+My research interests are in rendering, particularly physically based material modeling, neural rendering, inverse rendering, and real-time rendering.
+My long-term goal is to improve both the realism and efficiency of rendering, contributing to higher-quality visuals in video games and films.
+
+
+<span style="color:#A6B9C8; font-weight:600;">
+E-mail: zixuan.li_2001 [at] outlook [dot] com
+</span>
+
+<!-- <a href="/contact.html" class="highlighted">Contact Me</a> -->

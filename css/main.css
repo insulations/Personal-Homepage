@@ -67,6 +67,66 @@ a.highlighted:hover {
   text-align: left;
 }
 
+ol.bibliography {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ol.bibliography > li::marker {
+  content: "";
+}
+
+.bib-image img {
+  width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.bib-entry .bib-image {
+  padding-right: 12px;
+}
+
+.bib-entry > .col,
+.bib-entry > .col-12 {
+  padding-left: 12px;
+}
+
+.education-list .education-item {
+  margin-bottom: 8px;
+}
+
+.education-list .education-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-list .education-item h5,
+.education-list .education-item p {
+  margin-bottom: 0px;
+}
+
+.education-list .education-item p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-image {
+  margin-top: 40px;
+}
+
+.footer-credit {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  letter-spacing: 0.2px;
+}
+
+.project-image {
+  width: auto;
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
 /* Layout */
 * {
   @include box-sizing(border-box);

@@ -9,3 +9,7 @@ Gemfile.lock
 /Demo
 *.sh 
 *.xml
+
+# Local history + Windows zone identifiers
+.history/
+*:Zone.Identifier
