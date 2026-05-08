@@ -20,7 +20,7 @@ image_alt: A minimalistic jekyll theme for academic    # image description
 # -----------SITE SETTINGS---------------#
 #========================================#: 
 author: Zixuan Li 
-profile_image: /static/img/avatar/personal_pic.png #/static/img/avatar/avatar.jpeg 
+profile_image: /static/img/avatar/personal_pic.jpg #/static/img/avatar/avatar.jpeg 
 occupation: 
 snippet:
 twitter: 
