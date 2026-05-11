@@ -133,6 +133,10 @@ scholar:
 #-------------Used to generate icons-----#
 #========================================#
 font_awesome_id: 32a2b2a489                       # Register for free at https://fontawesome.com/ to get your id
+favicon_32: /static/img/icons/p4_32x32.png  # Browser tab icon (32x32)
+favicon_16: /static/img/icons/p4_16x16.png  # Browser tab icon (16x16)
+apple_touch_icon: /static/img/icons/apple-touch-icon.png
+safari_pinned_tab: /static/img/icons/safari-pinned-tab.svg
 
 
 # =======================================#        # For more information about these settings, visit https://htmlhead.dev #
