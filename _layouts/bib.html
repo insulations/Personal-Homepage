@@ -27,19 +27,24 @@
       <div class="author">
         {% for author in entry.author_array %}
           {% assign author_name = author.first | append: ' ' | append: author.last %}
+          {% assign author_profile = site.data.coauthors[author_name] | default: site.data.coauthors[author.last] %}
           {% if forloop.length == 1 %}
             {% if author.last == site.scholar.last_name %}
               <em>{{author_name}}</em>
             {% else %}
-              {{author_name}}
+              {% if author_profile and author_profile.url %}
+                <a href="{{author_profile.url}}" target="_blank" rel="noopener noreferrer">{{author_name}}</a>
+              {% else %}
+                {{author_name}}
+              {% endif %}
             {% endif %}
           {% else %}
             {% unless forloop.last %}
               {% if author.last == site.scholar.last_name %}
                 <em>{{author_name}}</em>,
               {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author_name}}</a>,
+                {% if author_profile and author_profile.url %}
+                  <a href="{{author_profile.url}}" target="_blank" rel="noopener noreferrer">{{author_name}}</a>,
                 {% else %}
                   {{author_name}},
                 {% endif %}
@@ -48,8 +53,8 @@
               {% if author.last == site.scholar.last_name %}
                 and <em>{{author_name}}</em>
               {% else %}
-                {% if site.data.coauthors[author.last] %}
-                  and <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author_name}}</a>
+                {% if author_profile and author_profile.url %}
+                  and <a href="{{author_profile.url}}" target="_blank" rel="noopener noreferrer">{{author_name}}</a>
                 {% else %}
                   and {{author_name}}
                 {% endif %}
