@@ -122,6 +122,28 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+function setupResultsGallery() {
+    const mainImage = document.getElementById('results-main-image');
+    const thumbs = document.querySelectorAll('.results-thumb');
+
+    if (!mainImage || thumbs.length === 0) return;
+
+    thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', function() {
+            const nextImage = thumb.dataset.image;
+            const nextAlt = thumb.dataset.alt || '';
+
+            if (!nextImage) return;
+
+            mainImage.src = nextImage;
+            mainImage.alt = nextAlt;
+
+            thumbs.forEach((item) => item.classList.remove('is-active'));
+            thumb.classList.add('is-active');
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const options = {
         slidesToScroll: 1,
@@ -141,4 +163,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     setupVideoCarouselAutoplay();
+    setupResultsGallery();
 });
