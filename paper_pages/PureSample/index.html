@@ -52,16 +52,19 @@
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/index.js"></script>
 </head>
 <body>
@@ -93,6 +96,15 @@
 
               <div class="publication-links">
                 <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2508.07240" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
                   <a href="https://arxiv.org/abs/2508.07240" target="_blank" rel="noopener noreferrer"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -102,12 +114,21 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/2508.07240" target="_blank" rel="noopener noreferrer"
+                  <a href="static/pdfs/sample.pdf" target="_blank" rel="noopener noreferrer"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/insulations" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
                   </a>
                 </span>
                 <span class="link-block">
@@ -129,7 +150,11 @@
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <img src="../../static/img/posts/Teaser_puresample.png" alt="PureSample teaser" loading="eager">
+          <div class="publication-banner">
+            <video poster="../../static/img/posts/Teaser_puresample.png" controls muted loop playsinline preload="metadata">
+              <source src="static/videos/banner_video.mp4" type="video/mp4">
+            </video>
+          </div>
           <h2 class="subtitle has-text-centered">
             A neural BRDF representation that learns material appearance directly from sampled forward random walks on microgeometry.
           </h2>
@@ -161,6 +186,33 @@
           <li><a href="https://arxiv.org/pdf/2508.07240" target="_blank" rel="noopener noreferrer">arXiv PDF</a></li>
           <li><a href="https://doi.org/10.1145/3799902.3811156" target="_blank" rel="noopener noreferrer">ACM DOI</a></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h2 class="title is-3 has-text-centered">Results</h2>
+            <p class="has-text-centered" style="margin-bottom: 2rem;">
+              You can replace the placeholder images below with your rendered comparisons, material slices, BRDF plots, or appearance close-ups.
+            </p>
+            <div id="results-carousel" class="carousel results-carousel">
+              <div class="item">
+                <img src="static/images/carousel1.jpg" alt="PureSample result 1" loading="lazy">
+              </div>
+              <div class="item">
+                <img src="static/images/carousel2.jpg" alt="PureSample result 2" loading="lazy">
+              </div>
+              <div class="item">
+                <img src="static/images/carousel3.jpg" alt="PureSample result 3" loading="lazy">
+              </div>
+              <div class="item">
+                <img src="static/images/carousel4.jpg" alt="PureSample result 4" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
