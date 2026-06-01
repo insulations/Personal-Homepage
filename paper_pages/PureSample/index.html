@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="title" content="PureSample: Neural Materials Learned by Sampling Microgeometry">
-  <meta name="description" content="Project page for PureSample, a SIGGRAPH 2026 paper on neural material modeling from sampled microgeometry.">
+  <meta name="description" content="PureSample is a neural BRDF representation that learns material appearance directly from sampled forward random walks on microgeometry.">
   <meta name="keywords" content="SIGGRAPH 2026, neural materials, appearance modeling, microgeometry, rendering">
-  <meta name="author" content="Zixuan Li, Zixiong Wang, Jian Yang, Milos Hasan, Beibei Wang">
+  <meta name="author" content="Zixuan Li, Zixiong Wang, Jian Yang, Milo\v{s} Ha\v{s}an, Beibei Wang">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Zixuan Li">
   <meta property="og:title" content="PureSample: Neural Materials Learned by Sampling Microgeometry">
-  <meta property="og:description" content="Project page for PureSample, a SIGGRAPH 2026 paper on neural material modeling from sampled microgeometry.">
+  <meta property="og:description" content="PureSample is a neural BRDF representation that learns material appearance directly from sampled forward random walks on microgeometry.">
   <meta property="og:image" content="../../static/img/posts/Teaser_puresample.png">
   <meta property="og:image:alt" content="PureSample teaser image">
   <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
@@ -25,7 +25,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PureSample: Neural Materials Learned by Sampling Microgeometry">
-  <meta name="twitter:description" content="Project page for PureSample, a SIGGRAPH 2026 paper on neural material modeling from sampled microgeometry.">
+  <meta name="twitter:description" content="PureSample is a neural BRDF representation that learns material appearance directly from sampled forward random walks on microgeometry.">
   <meta name="twitter:image" content="../../static/img/posts/Teaser_puresample.png">
   <meta name="twitter:image:alt" content="PureSample teaser image">
 
@@ -37,6 +37,7 @@
   <meta name="citation_author" content="Wang, Beibei">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="SIGGRAPH 2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2508.07240">
 
   <meta name="theme-color" content="#2563eb">
 
@@ -73,25 +74,49 @@
               <h1 class="title is-1 publication-title">PureSample: Neural Materials Learned by Sampling Microgeometry</h1>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><a href="../../" target="_blank" rel="noopener noreferrer">Zixuan Li</a>,</span>
-                <span class="author-block"><a href="https://www.bearprin.com/" target="_blank" rel="noopener noreferrer">Zixiong Wang</a>,</span>
-                <span class="author-block">Jian Yang,</span>
-                <span class="author-block">Milos Hasan,</span>
-                <span class="author-block"><a href="https://wangningbei.github.io/" target="_blank" rel="noopener noreferrer">Beibei Wang</a></span>
+                <span class="author-block"><a href="../../" target="_blank" rel="noopener noreferrer">Zixuan Li</a><sup>1</sup>,</span>
+                <span class="author-block"><a href="https://www.bearprin.com/" target="_blank" rel="noopener noreferrer">Zixiong Wang</a><sup>1</sup>,</span>
+                <span class="author-block">Jian Yang<sup>2</sup>,</span>
+                <span class="author-block"><a href="https://miloshasan.net/" target="_blank" rel="noopener noreferrer">Miloš Hašan</a><sup>3</sup>,</span>
+                <span class="author-block"><a href="https://wangningbei.github.io/" target="_blank" rel="noopener noreferrer">Beibei Wang</a><sup>2</sup></span>
               </div>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">SIGGRAPH 2026</span>
+                <span class="author-block"><sup>1</sup>Nankai University</span>
+                <span class="author-block"><sup>2</sup>Nanjing University</span>
+                <span class="author-block"><sup>3</sup>NVIDIA</span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">ACM SIGGRAPH Conference Papers 2026</span>
               </div>
 
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://wangningbei.github.io/2026/PureSample.html" target="_blank" rel="noopener noreferrer"
+                  <a href="https://arxiv.org/abs/2508.07240" target="_blank" rel="noopener noreferrer"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="fas fa-external-link-alt"></i>
+                      <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Project</span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2508.07240" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://doi.org/10.1145/3799902.3811156" target="_blank" rel="noopener noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-link"></i>
+                    </span>
+                    <span>DOI</span>
                   </a>
                 </span>
               </div>
@@ -106,7 +131,7 @@
         <div class="hero-body">
           <img src="../../static/img/posts/Teaser_puresample.png" alt="PureSample teaser" loading="eager">
           <h2 class="subtitle has-text-centered">
-            PureSample is a SIGGRAPH 2026 paper. This page is ready for the final paper assets, abstract, and supplementary material.
+            A neural BRDF representation that learns material appearance directly from sampled forward random walks on microgeometry.
           </h2>
         </div>
       </div>
@@ -119,7 +144,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Abstract coming soon. Replace this paragraph with the final abstract from the paper once you are ready to publish the full project page.
+                Traditional physically-based material models rely on analytically derived bidirectional reflectance distribution functions (BRDFs), typically by considering statistics of micro-primitives such as facets, flakes, or spheres, sometimes combined with multi-bounce interactions such as layering and multiple scattering. These derivations are often complex and model-specific. Once an analytic BRDF evaluation is defined, one still needs to design an importance sampling method for it and evaluate the probability density function (pdf) of that sampling distribution, requiring further model-specific derivations. We present PureSample: a novel neural BRDF representation that allows learning a material's appearance purely by sampling forward random walks on the microgeometry, which is usually straightforward to implement. Our representation allows for efficient BRDF evaluation, importance sampling, and pdf evaluation, for homogeneous as well as spatially varying materials. We achieve this by two learnable components: first, the sampling distribution is modeled using a flow matching neural network, which allows both importance sampling and pdf evaluation; second, we introduce a view-dependent albedo term, captured by a lightweight neural network, which allows for converting a pdf value to a BRDF value for any pair of view and light directions. We demonstrate PureSample on challenging materials, including various microgeometries, multi-layered materials, and multiple-scattering microfacet materials.
               </p>
             </div>
           </div>
@@ -130,9 +155,12 @@
     <section class="section">
       <div class="container is-max-desktop content">
         <h2 class="title is-3">Resources</h2>
-        <p>
-          Add the final paper PDF, code repository, supplementary material, video, and extra figures here as they become available.
-        </p>
+        <p>Current public resources for the paper:</p>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2508.07240" target="_blank" rel="noopener noreferrer">arXiv abstract page</a></li>
+          <li><a href="https://arxiv.org/pdf/2508.07240" target="_blank" rel="noopener noreferrer">arXiv PDF</a></li>
+          <li><a href="https://doi.org/10.1145/3799902.3811156" target="_blank" rel="noopener noreferrer">ACM DOI</a></li>
+        </ul>
       </div>
     </section>
 
@@ -148,10 +176,12 @@
         <pre id="bibtex-code"><code>@inproceedings{Li:2026:PureSample,
   title={PureSample: Neural Materials Learned by Sampling Microgeometry},
   author={Zixuan Li and Zixiong Wang and Jian Yang and Milo\v{s} Ha\v{s}an and Beibei Wang},
-  booktitle={Proceedings of SIGGRAPH},
+  booktitle={ACM SIGGRAPH Conference Papers},
   year={2026},
+  doi={10.1145/3799902.3811156},
   image={/static/img/posts/Teaser_puresample.png},
-  html={https://wangningbei.github.io/2026/PureSample.html},
+  html={/paper_pages/PureSample/},
+  arxiv={2508.07240},
 }</code></pre>
       </div>
     </section>
