@@ -78,12 +78,17 @@ body {
     transform: translateY(-2px);
 }
 
-.link-block a {
-    margin: 8px 4px;
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
-.publication-links {
-  margin-top: 1.5rem;
+.publication-links .button {
+  margin: 0;
 }
 
 .dnerf {
@@ -763,5 +768,4 @@ a:focus {
     box-shadow: none !important;
   }
 }
-
 

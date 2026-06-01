@@ -79,7 +79,7 @@
               <div class="is-size-5 publication-authors">
                 <span class="author-block"><a href="../../" target="_blank" rel="noopener noreferrer">Zixuan Li</a><sup>1</sup>,</span>
                 <span class="author-block"><a href="https://www.bearprin.com/" target="_blank" rel="noopener noreferrer">Zixiong Wang</a><sup>1</sup>,</span>
-                <span class="author-block">Jian Yang<sup>2</sup>,</span>
+                <span class="author-block">Jian Yang<sup>1,2</sup>,</span>
                 <span class="author-block"><a href="https://miloshasan.net/" target="_blank" rel="noopener noreferrer">Miloš Hašan</a><sup>3</sup>,</span>
                 <span class="author-block"><a href="https://wangningbei.github.io/" target="_blank" rel="noopener noreferrer">Beibei Wang</a><sup>2</sup></span>
               </div>
@@ -152,6 +152,38 @@
                 Traditional physically-based material models rely on analytically derived bidirectional reflectance distribution functions (BRDFs), typically by considering statistics of micro-primitives such as facets, flakes, or spheres, sometimes combined with multi-bounce interactions such as layering and multiple scattering. These derivations are often complex and model-specific. Once an analytic BRDF evaluation is defined, one still needs to design an importance sampling method for it and evaluate the probability density function (pdf) of that sampling distribution, requiring further model-specific derivations. We present PureSample: a novel neural BRDF representation that allows learning a material's appearance purely by sampling forward random walks on the microgeometry, which is usually straightforward to implement. Our representation allows for efficient BRDF evaluation, importance sampling, and pdf evaluation, for homogeneous as well as spatially varying materials. We achieve this by two learnable components: first, the sampling distribution is modeled using a flow matching neural network, which allows both importance sampling and pdf evaluation; second, we introduce a view-dependent albedo term, captured by a lightweight neural network, which allows for converting a pdf value to a BRDF value for any pair of view and light directions. We demonstrate PureSample on challenging materials, including various microgeometries, multi-layered materials, and multiple-scattering microfacet materials.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths has-text-centered">
+            <h2 class="title is-3">Physically-based Material Definition</h2>
+            <figure>
+              <img src="static/images/carousel1.jpg" alt="Physically-based material definition figure" loading="lazy">
+              <figcaption class="subtitle has-text-centered" style="margin-top: 1rem;">
+                Replace this with the figure that introduces your physically-based material definition.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths has-text-centered">
+            <h2 class="title is-3">Our Framework</h2>
+            <figure>
+              <img src="static/images/carousel2.jpg" alt="PureSample framework figure" loading="lazy">
+              <figcaption class="subtitle has-text-centered" style="margin-top: 1rem;">
+                Replace this with the overview diagram of the PureSample framework.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
