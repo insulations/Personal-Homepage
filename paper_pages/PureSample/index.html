@@ -63,6 +63,18 @@
   </noscript>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/index.js"></script>
@@ -91,7 +103,7 @@
               </div>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">ACM SIGGRAPH Conference Papers 2026</span>
+                <span class="author-block">ACM SIGGRAPH 2026 Conference Papers </span>
               </div>
 
               <div class="publication-links">
@@ -163,9 +175,9 @@
           <div class="column is-four-fifths has-text-centered">
             <h2 class="title is-3">Physically-based Material Definition</h2>
             <figure>
-              <img src="static/images/carousel1.jpg" alt="Physically-based material definition figure" loading="lazy">
+              <img src="static/images/complexBRDF.png" alt="Physically-based material definition figure" loading="lazy">
               <figcaption class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Replace this with the figure that introduces your physically-based material definition.
+                In typical physically-based material models, a material consists of three components: a microgeometry, a micro-BRDF, and an "operation" (multiple bounce, layering, etc.). Our framework not only unifies these models but also allows extending the material models by introducing arbitrary microgeometries.
               </figcaption>
             </figure>
           </div>
@@ -179,9 +191,9 @@
           <div class="column is-four-fifths has-text-centered">
             <h2 class="title is-3">Our Framework</h2>
             <figure>
-              <img src="static/images/carousel2.jpg" alt="PureSample framework figure" loading="lazy">
+              <img src="static/images/pipeline.png" alt="PureSample framework figure" loading="lazy">
               <figcaption class="subtitle has-text-centered" style="margin-top: 1rem;">
-                Replace this with the overview diagram of the PureSample framework.
+                Overview of our PureSample framework. For a given microgeometry, we sample the incoming direction uniformly and perform a forward path sampling with Russian roulette rejection sampling, generating outgoing directions with path throughput~(sampling weights). With these samples, we train a flow matching model for the probability distribution term (conditioned on $\omega_i $ and color channel) and an MLP for the view-dependent albedo term. With these two networks, our PureSample representation allows BRDF evaluation, importance sampling, and pdf evaluation.
               </figcaption>
             </figure>
           </div>
@@ -195,20 +207,20 @@
           <div class="column is-full">
             <h2 class="title is-3 has-text-centered">Results</h2>
             <p class="has-text-centered" style="margin-bottom: 2rem;">
-              You can replace the placeholder images below with your rendered comparisons, material slices, BRDF plots, or appearance close-ups.
+
             </p>
             <div id="results-carousel" class="carousel results-carousel">
               <div class="item">
-                <img src="static/images/carousel1.jpg" alt="PureSample result 1" loading="lazy">
+                <img src="static/images/res_microstructure.png" alt="PureSample result 1" loading="lazy">
               </div>
               <div class="item">
-                <img src="static/images/carousel2.jpg" alt="PureSample result 2" loading="lazy">
+                <img src="static/images/gallery.png" alt="PureSample result 2" loading="lazy">
               </div>
               <div class="item">
-                <img src="static/images/carousel3.jpg" alt="PureSample result 3" loading="lazy">
+                <img src="static/images/res_layer.png" alt="PureSample result 3" loading="lazy">
               </div>
               <div class="item">
-                <img src="static/images/carousel4.jpg" alt="PureSample result 4" loading="lazy">
+                <img src="static/images/res_mulscatteringWithCui.png" alt="PureSample result 4" loading="lazy">
               </div>
             </div>
           </div>
