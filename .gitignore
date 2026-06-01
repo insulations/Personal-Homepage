@@ -10,6 +10,13 @@ Gemfile.lock
 *.sh 
 *.xml
 
-# Local history + Windows zone identifiers
+# Editor and local history
 .history/
+
+# OS-generated junk files
+.DS_Store
+Thumbs.db
+
+# Windows alternate data streams from downloaded/copied files
 *:Zone.Identifier
+*:Zone.Identifier*
