@@ -262,8 +262,24 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+.wide-figure-section {
+  max-width: 1120px;
+}
+
+.wide-figure-section figure {
+  margin: 0;
+}
+
+.wide-figure-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
 .results-gallery {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
@@ -272,13 +288,20 @@ body {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 1rem;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .results-stage img {
   width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 580px;
+  height: 100%;
   display: block;
   border-radius: var(--border-radius);
+  object-fit: contain;
 }
 
 .results-thumbnails {
