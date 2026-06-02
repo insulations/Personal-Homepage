@@ -262,8 +262,12 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+.figure-container {
+  max-width: min(1600px, 94vw);
+}
+
 .wide-figure-section {
-  max-width: 1120px;
+  max-width: 1480px;
 }
 
 .wide-figure-section figure {
@@ -279,7 +283,7 @@ body {
 }
 
 .results-gallery {
-  max-width: 1120px;
+  max-width: 1480px;
   margin: 0 auto;
 }
 
