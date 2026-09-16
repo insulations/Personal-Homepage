@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="Fiber-level Woven Fabric Capture from a Single Microscopic Image">
+  <meta name="description" content="A coarse-to-fine framework for recovering fiber-level woven fabric geometry and appearance from a single low-cost microscope image.">
+  <meta name="keywords" content="woven fabric, fiber-level rendering, appearance capture, differentiable rendering, inverse rendering, ACM TOG 2026">
+  <meta name="author" content="Zixuan Li, Pengfei Shen, Hanxiao Sun, Zibo Zhang, Yu Guo, Ligang Liu, Ling-Qi Yan, Steve Marschner, Miloš Hašan, Beibei Wang">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Zixuan Li">
+  <meta property="og:title" content="Fiber-level Woven Fabric Capture from a Single Microscopic Image">
+  <meta property="og:description" content="Recovering realistic fiber-level woven fabrics from one microscope image with differentiable procedural geometry and appearance models.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:image:alt" content="Fiber-level woven fabric capture teaser">
+  <meta property="article:published_time" content="2026-10-01T00:00:00.000Z">
+  <meta property="article:author" content="Zixuan Li">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Rendering">
+  <meta property="article:tag" content="Fabric Capture">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fiber-level Woven Fabric Capture from a Single Microscopic Image">
+  <meta name="twitter:description" content="Recovering realistic fiber-level woven fabrics from one microscope image.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:image:alt" content="Fiber-level woven fabric capture teaser">
+
+  <meta name="citation_title" content="Fiber-level Woven Fabric Capture from a Single Microscopic Image">
+  <meta name="citation_author" content="Li, Zixuan">
+  <meta name="citation_author" content="Shen, Pengfei">
+  <meta name="citation_author" content="Sun, Hanxiao">
+  <meta name="citation_author" content="Zhang, Zibo">
+  <meta name="citation_author" content="Guo, Yu">
+  <meta name="citation_author" content="Liu, Ligang">
+  <meta name="citation_author" content="Yan, Ling-Qi">
+  <meta name="citation_author" content="Marschner, Steve">
+  <meta name="citation_author" content="Hašan, Miloš">
+  <meta name="citation_author" content="Wang, Beibei">
+  <meta name="citation_publication_date" content="2026/10">
+  <meta name="citation_journal_title" content="ACM Transactions on Graphics">
+  <meta name="citation_volume" content="45">
+  <meta name="citation_issue" content="5">
+  <meta name="citation_doi" content="10.1145/3816036">
+  <meta name="citation_pdf_url" content="static/pdfs/fiberfabric.pdf">
+
+  <meta name="theme-color" content="#2563eb">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Fiber-level Woven Fabric Capture | ACM TOG 2026</title>
+
+  <link rel="apple-touch-icon" href="../../static/img/icons/p4_32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../static/img/icons/p4_32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../static/img/icons/p4_16x16.png">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Fiber-level Woven Fabric Capture from a Single Microscopic Image</h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><a href="../../" target="_blank" rel="noopener noreferrer">Zixuan Li</a><sup>1,*</sup>,</span>
+                <span class="author-block"><a href="https://jerry-shen0527.github.io/" target="_blank" rel="noopener noreferrer">Pengfei Shen</a><sup>2,*</sup>,</span>
+                <span class="author-block">Hanxiao Sun<sup>1,*</sup>,</span>
+                <span class="author-block">Zibo Zhang<sup>1</sup>,</span>
+                <span class="author-block">Yu Guo<sup>3</sup>,</span>
+                <span class="author-block"><a href="https://staff.ustc.edu.cn/~lgliu/" target="_blank" rel="noopener noreferrer">Ligang Liu</a><sup>4</sup>,</span>
+                <span class="author-block"><a href="https://lingqiyan.github.io/" target="_blank" rel="noopener noreferrer">Ling-Qi Yan</a><sup>5</sup>,</span>
+                <span class="author-block"><a href="https://www.cs.cornell.edu/~srm/" target="_blank" rel="noopener noreferrer">Steve Marschner</a><sup>6</sup>,</span>
+                <span class="author-block"><a href="https://miloshasan.net/" target="_blank" rel="noopener noreferrer">Miloš Hašan</a><sup>7</sup>,</span>
+                <span class="author-block"><a href="https://wangningbei.github.io/" target="_blank" rel="noopener noreferrer">Beibei Wang</a><sup>8,†</sup></span>
+              </div>
+
+              <div class="is-size-6 publication-authors affiliations">
+                <span class="author-block"><sup>1</sup>Nankai University</span>
+                <span class="author-block"><sup>2</sup>The University of Hong Kong</span>
+                <span class="author-block"><sup>3</sup>George Mason University</span>
+                <span class="author-block"><sup>4</sup>University of Science and Technology of China</span>
+                <span class="author-block"><sup>5</sup>Mohamed bin Zayed University of Artificial Intelligence</span>
+                <span class="author-block"><sup>6</sup>Cornell University</span>
+                <span class="author-block"><sup>7</sup>NVIDIA</span>
+                <span class="author-block"><sup>8</sup>Nanjing University</span>
+              </div>
+
+              <p class="is-size-7 contribution-note"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</p>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">ACM Transactions on Graphics, 2026</span>
+              </div>
+
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://dl.acm.org/doi/10.1145/3816036" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2409.06368" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://doi.org/10.1145/3816036" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-link"></i></span>
+                    <span>DOI</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <div class="publication-banner">
+            <img class="teaser-image" src="static/images/teaser.png" alt="Recovered woven fabrics rendered on a sofa, alongside microscope input details" loading="eager">
+          </div>
+          <h2 class="subtitle has-text-centered">
+            Recovering realistic fiber-level woven fabric geometry and appearance from a single low-cost microscope image.
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Accurately rendering the appearance of fabrics is challenging, due to their complex 3D microstructures and specialized optical properties. If we model the geometry and optics of fabrics down to the fiber level, we can achieve unprecedented rendering realism, but this raises the difficulty of authoring the fiber-level assets. Existing approaches can obtain fiber-level geometry with special devices (e.g., CT) or hand-designed procedural pipelines. In this paper, we propose a method to capture fiber-level geometry and appearance of woven fabrics using a single low-cost microscope image. This may seem like an impossible task: a single image from a low-cost microscope looks very different from the final rendering we would like to achieve, and the information contained in it may seem minimal. We propose a novel fiber parameter estimation pipeline in a coarse-to-fine manner, establishing a subset of parameters step by step. At the core of our pipeline are differentiable procedural geometric and appearance models for woven fabrics at the fiber level, enabling both geometry and appearance to be optimized simultaneously. We first use a simple neural network to predict initial parameters, then we optimize the parameters of procedural fiber geometry and an approximated shading model via differentiable rasterization to match the microscope photo more accurately. Finally, we refine the fiber appearance parameters via differentiable path tracing, converging to accurate fiber optical parameters, which are suitable for physically-based light simulations to produce high-quality rendered results. We believe that our method is the first to utilize differentiable rendering at the microscopic level, supporting physically-based scattering from explicit fiber assemblies. Our fabric parameter estimation achieves high-quality re-rendering of measured woven fabric samples in both distant and close-up views. We also propose a patch-space fiber geometry procedural generation method and a two-scale path tracing framework for efficient rendering of fabric scenes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container figure-container">
+        <div class="columns is-centered">
+          <div class="column is-full has-text-centered wide-figure-section">
+            <h2 class="title is-3">Fiber Parameter Estimation</h2>
+            <figure>
+              <a class="figure-zoom-link" href="static/images/pipeline.png" target="_blank" rel="noopener noreferrer" aria-label="Open the fiber parameter estimation diagram at full resolution">
+                <img src="static/images/pipeline.png" alt="Three-stage fiber parameter estimation pipeline" loading="eager">
+              </a>
+              <figcaption class="subtitle has-text-centered" style="margin-top: 1rem;">
+                Starting from a microscope capture, our coarse-to-fine pipeline predicts initial fiber parameters, jointly optimizes geometry and appearance with differentiable rasterization, and refines optical parameters with differentiable path tracing.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container figure-container">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <h2 class="title is-3 has-text-centered">Recovery Results</h2>
+            <div class="results-gallery">
+              <div class="results-stage">
+                <a id="results-main-link" class="figure-zoom-link" href="static/images/results-synthetic.png" target="_blank" rel="noopener noreferrer" aria-label="Open the selected recovery result at full resolution">
+                  <img id="results-main-image" src="static/images/results-synthetic.png" alt="Fiber-level recovery results on synthetic woven fabric data" loading="eager">
+                </a>
+              </div>
+              <div class="results-thumbnails" role="tablist" aria-label="Recovery results gallery navigation">
+                <button class="results-thumb is-active" type="button" data-image="static/images/results-synthetic.png" data-alt="Fiber-level recovery results on synthetic woven fabric data" aria-label="Show synthetic recovery results">
+                  <img src="static/images/results-synthetic.png" alt="" loading="lazy">
+                </button>
+                <button class="results-thumb" type="button" data-image="static/images/results-real.png" data-alt="Fiber-level recovery results on real woven fabric captures" aria-label="Show real-data recovery results">
+                  <img src="static/images/results-real.png" alt="" loading="lazy">
+                </button>
+                <button class="results-thumb" type="button" data-image="static/images/validation.png" data-alt="Meso-scale validation and ablation results" aria-label="Show meso-scale validation results">
+                  <img src="static/images/validation.png" alt="" loading="lazy">
+                </button>
+                <button class="results-thumb" type="button" data-image="static/images/comparison.png" data-alt="Comparison with a prior surface-level fabric capture method" aria-label="Show comparison results">
+                  <img src="static/images/comparison.png" alt="" loading="lazy">
+                </button>
+              </div>
+            </div>
+            <p class="subtitle has-text-centered results-caption">
+              The recovered models reproduce both micro-scale fiber detail and meso-scale appearance across synthetic and real captures, and transfer directly to scene-scale rendering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{Li:2026:FiberFabric,
+  title={Fiber-level Woven Fabric Capture from a Single Microscopic Image},
+  author={Zixuan Li and Pengfei Shen and Hanxiao Sun and Zibo Zhang and Yu Guo and Ligang Liu and Ling-Qi Yan and Steve Marschner and Milo\v{s} Ha\v{s}an and Beibei Wang},
+  journal={ACM Transactions on Graphics},
+  volume={45},
+  number={5},
+  article={175},
+  pages={1--18},
+  year={2026},
+  month={October},
+  doi={10.1145/3816036}
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, which was adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
