@@ -17,13 +17,18 @@
     {% if entry.type == "thesis" %}
       {{reference}}
     {% else %}
-      {% if entry.html %}
-        <div class="title font-weight-bold"><a href="{{ entry.html }}" target="_blank">{{entry.title}}</a></div>
-      {% elsif entry.website %}
-        <div class="title font-weight-bold"><a href="{{ entry.website }}" target="_blank">{{entry.title}}</a></div>
-      {% else %}
-        <div class="title font-weight-bold">{{entry.title}}</div>
-      {% endif %}
+      <div class="title font-weight-bold">
+        {% if entry.html %}
+          <a href="{{ entry.html }}" target="_blank">{{entry.title}}</a>
+        {% elsif entry.website %}
+          <a href="{{ entry.website }}" target="_blank">{{entry.title}}</a>
+        {% else %}
+          {{entry.title}}
+        {% endif %}
+        {% if entry.highlight %}
+          <span class="publication-highlight"><i class="fas fa-star" aria-hidden="true"></i>{{entry.highlight}}</span>
+        {% endif %}
+      </div>
       <div class="author">
         {% for author in entry.author_array %}
           {% assign author_name = author.first | append: ' ' | append: author.last %}
